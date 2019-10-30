@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, tap, map } from 'rxjs/operators';
 
 import { IProduct } from './product';
 
@@ -9,6 +9,9 @@ import { IProduct } from './product';
   providedIn: 'root'
 })
 export class ProductService {
+  // If using Stackblitz, replace the url with this line
+  // because Stackblitz can't find the api folder.
+  // private productUrl = 'assets/products/products.json';
   private productUrl = 'api/products/products.json';
 
   constructor(private http: HttpClient) { }
@@ -18,6 +21,13 @@ export class ProductService {
       .pipe(
         tap(data => console.log('All: ' + JSON.stringify(data))),
         catchError(this.handleError)
+      );
+  }
+
+  getProduct(id: number): Observable<IProduct | undefined> {
+    return this.getProducts()
+      .pipe(
+        map((products: IProduct[]) => products.find(p => p.productId === id))
       );
   }
 
