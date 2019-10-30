@@ -8,7 +8,7 @@ import { ProductService } from './product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  pageTitle = 'Product List';
+  pageTitle = 'Lista de produtos';
   imageWidth = 50;
   imageMargin = 2;
   showImage = false;
@@ -31,7 +31,7 @@ export class ProductListComponent implements OnInit {
   }
 
   onRatingClicked(message: string): void {
-    this.pageTitle = 'Product List: ' + message;
+    this.pageTitle = 'Lista de Produtos: ' + message;
   }
 
   performFilter(filterBy: string): IProduct[] {
