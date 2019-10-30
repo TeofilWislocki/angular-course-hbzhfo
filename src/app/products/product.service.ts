@@ -20,6 +20,13 @@ export class ProductService {
         catchError(this.handleError)
       );
   }
+    getProducts(id:number): Observable<IProduct[]> {
+    return this.http.get<IProduct[]>(this.productUrl)
+      .pipe(
+        tap(data => console.log('All: ' + JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
 
   private handleError(err: HttpErrorResponse) {
     // in a real world app, we may send the server to some remote logging infrastructure
