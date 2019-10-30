@@ -1,4 +1,4 @@
-[
+{[
   {
     "productId": 1,
     "productName": "Leaf Rake",
@@ -7,7 +7,7 @@
     "description": "Leaf rake with 48-inch wooden handle.",
     "price": 19.95,
     "starRating": 3.2,
-    "imageUrl": "https://raw.githubusercontent.com/DeborahK/Angular-GettingStarted/master/APM-Final/src/api/products/products.jsonassets/images/leaf_rake.png"
+    "imageUrl": "assets/images/leaf_rake.png"
   },
   {
     "productId": 2,
@@ -49,4 +49,4 @@
     "starRating": 4.6,
     "imageUrl": "assets/images/xbox-controller.png"
   }
-]
+]}
